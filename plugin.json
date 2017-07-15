@@ -1,0 +1,16 @@
+{
+    "id": "nodebb-widget-lotro-serverstatus",
+    "name": "NodeBB LOTRO Server Status Widget",
+    "description": "Adds a widget to show LOTRO Server Status",
+    "url": "https://github.com/gtfr/nodebb-widget-lotro-serverstatus.git",
+    "library": "library.js",
+    "hooks": [
+        { "hook": "static:app.load", "method": "init" },
+        { "hook": "filter:widgets.getWidgets", "method": "defineWidget" },
+        { "hook": "filter:widget.render:lotro-serverstatus", "method": "renderStatusWidget" }
+    ],
+    "css": [
+    	"public/style.css"
+    ],
+    "templates": "public/templates"
+}

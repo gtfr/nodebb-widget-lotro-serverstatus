@@ -1,0 +1,36 @@
+{
+  "name": "nodebb-widget-lotro-serverstatus",
+  "version": "0.1.0",
+  "description": "Adds a widget to show LOTRO Server Status",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gtfr/nodebb-widget-lotro-serverstatus.git"
+  },
+  "keywords": [
+    "lotro",
+    "nodebb",
+    "widget"
+  ],
+  "author": "gtfr",
+  "contributors": [
+    {
+      "name": "Frank",
+      "email": "gtfr@posteo.de"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gtfr/nodebb-widget-lotro-serverstatus/issues"
+  },
+  "homepage": "https://github.com/gtfr/nodebb-widget-lotro-serverstatus",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "dependencies": {
+    "async": ">=0.9.0"
+  }
+}
