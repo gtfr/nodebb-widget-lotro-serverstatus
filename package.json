@@ -1,6 +1,6 @@
 {
   "name": "nodebb-widget-lotro-serverstatus",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "description": "Adds a widget to show LOTRO Server Status",
   "main": "library.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/gtfr/nodebb-widget-lotro-serverstatus",
   "nbbpm": {
-    "compatibility": "^1.0.0"
+    "compatibility": "^1.5.1"
   },
   "dependencies": {
     "async": ">=2.4.1",

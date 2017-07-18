@@ -73,9 +73,8 @@
                     if (err.code === "ECONNRESET") {
                         console.log('[lotro-widget] Timeout on http request to lux-hdro.de');
                     }
-                    callback(null, {
-                        html: '<h4>An Error occurred:<h4><pre>' + JSON.stringify(err, null, 2) + '</pre>'
-                    });
+                    widget.html = '<h4>An Error occurred:<h4><pre>' + JSON.stringify(err, null, 2) + '</pre>';
+                    callback(null, widget);
                 });
                 request.on('response', function(res) {
                     if (res.statusCode === 200 && res.headers['content-type'] === 'text/xml') {
@@ -87,11 +86,11 @@
                             callback(null, response_data)
                         });
                         res.on('error', function(err) {
-                            console.log('[lotro-widget] Error1: ' + err.message);
+                            console.log('[lotro-widget] Error: ' + err.message);
                             callback(err);
                         });
                     } else {
-                        console.log('[lotro-widget] Error2: ' + res.statusCode);
+                        console.log('[lotro-widget] Error: ' + res.statusCode);
                         var err = {
                             'statusCode': res.statusCode,
                             'content-type': res.headers['content-type'],
@@ -129,15 +128,12 @@
             }
         ], function(err, result) {
             if (err) {
-                console.log('[lotro-widget] Error3:');
-                callback(null, {
-                    html: '<h4>An Error occurred:<h4><pre>' + JSON.stringify(err, null, 2) + '</pre>'
-                });
+                console.log('[lotro-widget] Error: See widget content');
+                widget.html = '<h4>An Error occurred:<h4><pre>' + JSON.stringify(err, null, 2) + '</pre>';
             } else {
-                callback(null, {
-                    html: templates.parse(Widget.templates['widget.tpl'], data)
-                });
+                widget.html = templates.parse(Widget.templates['widget.tpl'], data);
             }
+            callback(null, widget);
         });
     };
 
